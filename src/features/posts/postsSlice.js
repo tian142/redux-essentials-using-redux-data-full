@@ -7,6 +7,13 @@ const initialState = [
     content: 'Hello!',
     author: '0',
     date: '2021-02-16T20:43:20.103Z',
+    reactoins: {
+      thumbsUp: 0,
+      hooray: 0,
+      heart: 0,
+      rocket: 0,
+      eyes: 0,
+    },
   },
   {
     id: '2',
@@ -14,6 +21,13 @@ const initialState = [
     content: 'More text',
     author: '1',
     date: '2021-02-16T20:43:20.103Z',
+    reactoins: {
+      thumbsUp: 0,
+      hooray: 0,
+      heart: 0,
+      rocket: 0,
+      eyes: 0,
+    },
   },
 ]
 
@@ -45,9 +59,16 @@ const postsSlice = createSlice({
         existingPost.content = content
       }
     },
+    reactoinAdded(state, action) {
+      const { postId, reaction } = action.payload
+      const existingPost = state.find((post) => post.id === postId)
+      if (existingPost) {
+        existingPost.reactions[reaction]++
+      }
+    },
   },
 })
 
-export const { postAdded, postEdited } = postsSlice.actions
+export const { postAdded, postEdited, reactoinAdded } = postsSlice.actions
 
 export default postsSlice.reducer
