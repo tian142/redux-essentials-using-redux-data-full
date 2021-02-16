@@ -22,7 +22,7 @@ export const AddPostForm = () => {
     </option>
   ))
 
-  const onSavePostClicked = () => dispatch(postAdded(title, content))
+  const onSavePostClicked = () => dispatch(postAdded(title, content, author))
 
   return (
     <section>
