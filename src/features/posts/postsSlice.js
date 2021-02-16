@@ -7,7 +7,7 @@ const initialState = [
     content: 'Hello!',
     author: '0',
     date: '2021-02-16T20:43:20.103Z',
-    reactoins: {
+    reactions: {
       thumbsUp: 0,
       hooray: 0,
       heart: 0,
@@ -21,7 +21,7 @@ const initialState = [
     content: 'More text',
     author: '1',
     date: '2021-02-16T20:43:20.103Z',
-    reactoins: {
+    reactions: {
       thumbsUp: 0,
       hooray: 0,
       heart: 0,
