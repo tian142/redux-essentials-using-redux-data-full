@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 
 import { Link } from 'react-router-dom'
 import { PostAuthor } from './PostAuthor'
+import { TimeAgo } from './TimeAgo'
 
 export const SinglePost = ({ match }) => {
   const { postId } = match.params
@@ -22,6 +23,7 @@ export const SinglePost = ({ match }) => {
       <p>{post.content}</p>
       <Link to={`/editPost/${postId}`}>Edit Post</Link>
       <PostAuthor userId={post.author} />
+      <TimeAgo timestamp={post.date} />
     </div>
   )
 }
