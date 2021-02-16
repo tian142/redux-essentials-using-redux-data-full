@@ -24,6 +24,8 @@ export const AddPostForm = () => {
 
   const onSavePostClicked = () => dispatch(postAdded(title, content, author))
 
+  const canSave = Boolean(title) && Boolean(content) && Boolean(author)
+
   return (
     <section>
       <h2>Add a New Post</h2>
@@ -48,7 +50,7 @@ export const AddPostForm = () => {
           <option value=""></option>
           {mapUsersOptions}
         </select>
-        <button type="button" onClick={onSavePostClicked}>
+        <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
           Save Post
         </button>
       </form>
